@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ownproject.css">
+    <style>
+        body{
+    display: flex;
+     align-items: center;
+    justify-content: center; 
+    overflow: hidden;
+    margin: 0;
+     height: 100vh;
+}
+.container{
+    display: flex;
+    width: 80vw;
+}
+.image{
+ background-size: cover;
+ background-repeat: no-repeat;
+background-position: center;
+height:70vh;
+flex: 0.5;
+margin: 10px;
+cursor: pointer;
+border-radius: 50px;
+position: relative;
+-webkit-transition: all 700ms ease-in; 
+}
+.image.active{
+    flex: 5;
+}
+@media(max-width:480px){
+    .container{
+        width: 100vw;
+    }
+     .image:nth-of-type(4),
+    .image:nth-of-type(5){
+       display:none;
+    } 
+    
+}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="image" style="background-image: url('f4d4bcbbd93187194c3df99702219977.jpg');">
+    </div>
+<div class="image" style="background-image:url('forest-dog-husky-wallpaper-preview.jpg');">
+</div>
+<div class="image active" style="background-image:url('unnamed.png'); "></div>
+<div class="image" style="background-image:url('three-beautiful-white-horses-hd-desktop-wallpaper-for-your-pc-wallpaper-preview.jpg');">
+</div>
+<div class="image" style="background-image:url('tree-736885__480.jpg');">
+</div>
+</div>
+  <script>
+    const images = document.querySelectorAll('.image')
+
+    images.forEach(image => {
+       image.addEventListener('click' , () =>{
+            removeActiveClasses()
+            image.classList.add('active')
+        })
+    })
+    function removeActiveClasses(){
+        images.forEach(image => {
+            image.classList.remove('active')
+        })
+    }
+  </script>
+</body>
+</html>
